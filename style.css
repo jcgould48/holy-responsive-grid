@@ -6,28 +6,72 @@
   font-size: 5em;
   text-align: center;
   height: 100vh;
+  display:grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 20% 65% 15%;
+  grid-template-areas:
+    "head head head"
+    "nav art1 ad"
+    "nav art2 ad"
+    "foot foot foot"
+  ;
 }
 
 #header {
   background-color: #f3ca40;
+  grid-area: head;
 }
 
 #nav {
   background-color: #4b4e6d;
+  grid-area: nav;
 }
 
 #article-1 {
   background-color: #6a8d92;
+  grid-area: art1;
 }
 
 #article-2 {
   background-color: yellow;
+  grid-area: art2;
 }
 
 #ads {
   background-color: #f2a541;
+  grid-area: ad;
 }
 
 #footer {
   background-color: #f08a4b;
+  grid-area: foot;
+}
+
+@media (max-width: 1000px) {
+  #app {
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "head head"
+      "nav nav"
+      "art1 ad"
+      "art2 ad"
+      "foot foot"
+    ;
+  }
+}
+@media (max-width: 500px) {
+  #app {
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "head"
+      "top1"
+      "nav"
+      "art1"
+      "ad"
+      "art2"
+      "foot"
+    ;
+  }
 }
